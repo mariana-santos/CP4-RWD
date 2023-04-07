@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CP4-WEB/Q. 08</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+
+<body id="questao">
+    <section id="enunciado">
+        <div>
+            <h1>Questão 08.</h1>
+            <p>Como usar o operador % em JavaScript? Exemplifique e demonstre a saída! (5 Pontos) </p>
+        </div>
+    </section>
+
+    <section id="answer">
+        <section id="par_impar">    
+            <h1>Verificar se número é par ou ímpar</h1>
+        </section>
+
+        <section class="find">
+            <input type="number" placeholder="Que número deseja verificar?" id="numero" min="1">
+            <button type="button" onclick="verificaParOuImpar()" >Verificar</button> 
+            <p id="result_numero" style="width: 100%"></p>
+        </section>
+    </section>
+
+    <script>
+
+        const verificaParOuImpar = () => {
+            const numero = parseFloat(document.querySelector('#numero').value)
+
+            const result_numero = document.querySelector('#result_numero')
+
+            if (numero % 2 === 0) {
+                result_numero.innerHTML = (numero + ' é par.');
+            } else {
+                result_numero.innerHTML = (numero + ' é ímpar.');
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -51,30 +51,7 @@
             } else {
                 result_faixa_etaria.innerHTML = ("idoso!");
             }
-
-
         }
-        
-        function buscar_aluno() {
-            const nome = document.querySelector('#nome').value.toLocaleLowerCase()
-            const result_busca = document.querySelector('#result_busca')
-            let aluno = escola.alunos.find(aluno => aluno.nome.toLocaleLowerCase() === nome);
-
-            aluno ? result_busca.innerHTML = `Encontramos o aluno ${nome} que possui ${aluno.idade} anos.` :
-            result_busca.innerHTML = `Não encontramos o aluno ${nome} nesta turma.`
-        }
-
-        const container = document.querySelector('#info_turma');
-        const students = document.querySelector('#students');
-
-        const alunos_estudando = tela_aluno_estudando(escola.alunos)
-
-        container.innerHTML += '<p><strong>Curso: </strong>'+ escola.curso +'</p>'
-        container.innerHTML += '<p><strong>Período: </strong>'+ escola.periodo +'</p>'
-        container.innerHTML += '<p><strong>Professor: </strong>'+ escola.professor +'</p>'
-        container.innerHTML += tela_aluno_estudando(escola.alunos)
-
-        // escola.buscar_aluno("Wellington");
 
     </script>
 </body>
