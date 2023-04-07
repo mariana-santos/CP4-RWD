@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CP4-WEB/Q. 01</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+
+<body id="questao">
+    <section id="enunciado">
+        <div>
+            <h1>Questão 01.</h1>
+            <p>Criar um objeto escola e com os atributos curso, aluno, professor, turma, período coloque os valores dos
+                atributos. Exemplifique e demonstre a saída (15 pontos)</p>
+
+            <p>a) Crie um método telaaluno estudando e apresente na tela</p>
+            <p>b) busque um aluno usando o método find e apresente na tela </p>
+        </div>
+    </section>
+
+    <section id="answer">
+        <section id="info_turma">    
+            <h1>Informações da turma:</h1>
+        </section>
+
+        <section id="find">
+            <input type="text" placeholder="Qual aluno deseja encontrar?" id="nome">
+            <button type="button" onclick="buscar_aluno()" >Buscar</button> 
+            <p id="result_busca"></p>
+        </section>
+    </section>
+
+    <script>
+        
+        let escola = {
+            curso: "Análise e Desenvolvimento de Sistemas",
+            periodo: "Noturno",
+            turma: "1TDSPR",
+            professor: "Ronqui",
+            alunos: [
+                { nome: "Wellington", idade: 22 },
+                { nome: "Joseffe", idade: 20 },
+                { nome: "Marcel", idade: 25 }
+            ],
+
+        };
+
+        function tela_aluno_estudando(alunos) {
+            let alunosstr = '<div id="students"> <h2>Alunos: </h2>'
+            alunos.forEach(aluno => {
+                alunosstr += (`<p>${aluno.nome} <span>${aluno.idade} anos</span></p>`);
+            });
+
+            alunosstr += '</div>';
+            return alunosstr;
+        }
+        
+        function buscar_aluno() {
+            const nome = document.querySelector('#nome').value.toLocaleLowerCase()
+            const result_busca = document.querySelector('#result_busca')
+            let aluno = escola.alunos.find(aluno => aluno.nome.toLocaleLowerCase() === nome);
+
+            aluno ? result_busca.innerHTML = `Encontramos o aluno ${nome} que possui ${aluno.idade} anos.` :
+            result_busca.innerHTML = `Não encontramos o aluno ${nome} nesta turma.`
+        }
+
+        const container = document.querySelector('#info_turma');
+        const students = document.querySelector('#students');
+
+        const alunos_estudando = tela_aluno_estudando(escola.alunos)
+
+        container.innerHTML += '<p><strong>Curso: </strong>'+ escola.curso +'</p>'
+        container.innerHTML += '<p><strong>Período: </strong>'+ escola.periodo +'</p>'
+        container.innerHTML += '<p><strong>Professor: </strong>'+ escola.professor +'</p>'
+        container.innerHTML += tela_aluno_estudando(escola.alunos)
+
+        // escola.buscar_aluno("Wellington");
+
+    </script>
+</body>
+
+</html>

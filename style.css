@@ -1,6 +1,7 @@
 body{
     margin: 0;
     background: #242935;
+    background: #14141c;
     color: #ccc;
     min-height: 100vh;
     display: flex;
@@ -8,6 +9,10 @@ body{
     align-items: center;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
+}
+
+#intro {
+    display: flex;
 }
 
 #intro h1{
@@ -34,11 +39,15 @@ body{
     font-size: .9em;
 }
 
-#intro span{
+span{
     font-size: .8em;
     display: inline-block;
     margin-left: .5em;
     opacity: .8;
+}
+
+#intro img{
+    width: 20%;
 }
 
 #questions p{
@@ -80,6 +89,81 @@ a{
     box-shadow: 0px 0px 13px -2px rgba(42, 42, 42, 0.75);
 }
 
+#questao{
+    flex-direction: row;
+    gap: 2em;
+    padding: 5em;
+    min-height: calc(100vh - 10em);
+}
+
+#enunciado{
+    border: solid 2px #242935;
+    background: #2b2b3c71;
+    border-radius: 7px;
+    padding: 1.5em;
+    width: 50%;
+}
+
+#enunciado p:last-of-type{
+    margin-bottom: 0;
+}
+
+h1{
+    color: #6C4DE6;
+    margin-top: 0;
+}
+
+#answer p{
+    margin: 0;
+}
+
+#students{
+    margin-top: 1em;
+}
+
+#students h2{
+    font-size: 1.3em;
+    margin-bottom: .3em;
+}
+
+#info_turma h1{
+    font-size: 1.7em;
+    margin-bottom: .3em;
+}
+
+#find{
+    margin-top: 2em;
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+input, input:active{
+    border: solid 2px #242935;
+    background: #31314abf;
+    border-radius: 3px;
+    padding: 5px 15px;
+    width: 50%;
+    font-family: 'Poppins';
+    outline: none;
+    color: #ccc
+}
+
+button{
+    background: #6C4DE6;
+    color: #ccc;
+    outline: none;
+    border: 0;
+    font-family: 'Poppins';
+    width: calc(30% - 1em);
+    border-radius: 3px;
+    transition: .3s;
+}
+
+button:hover{
+    transform: translateY(-10%);
+}
+
 @media screen and (min-width: 769px){
     section{
         width: 70%;
@@ -87,8 +171,12 @@ a{
 }
 
 @media screen and (max-width: 769px){
-    body{
+    body, #questao{
         padding: 2em;
+    }
+
+    #questao{
+        flex-direction: column;
     }
 
     #intro h1{
@@ -108,5 +196,19 @@ a{
 
     .question{
         width: calc(50% - 3em);
+    }
+
+    #intro {
+        flex-direction: column-reverse;
+    }
+
+    #intro img{
+        width: 40%;
+        margin: auto;
+        margin-bottom: 1em;
+    }
+
+    #enunciado{
+        width: 100%;
     }
 }
