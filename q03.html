@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CP4-WEB/Q. 03</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+
+<body id="questao">
+    <section id="enunciado">
+        <div>
+            <h1>Questão 03.</h1>
+            <p>Crie uma função tradicional que some A e B e depois faça a divisão por C e apresente. </p>
+            <p>agora com o mesmo exemplo crie uma Arrow function para apresentar o mesmo resultado (15 pontos)</p>
+        </div>
+    </section>
+
+    <section id="answer">
+        <section id="info_funcs">
+            <h1>Cálculo</h1>
+        </section>
+
+        <section id="find" class="calculo">
+            <input type="number" placeholder="Valor de A" id="a" min="1">
+            <input type="number" placeholder="Valor de B" id="b" min="1">
+            <input type="number" placeholder="Valor de C" id="c" min="1">
+            <button type="button" onclick="calcular_arrow()" >Calcular</button> 
+            <p id="result_calculo"></p>
+        </section>
+    </section>
+
+    <script>
+
+        const result_calculo = document.querySelector('#result_calculo');
+
+        function calcular() {
+            const a = document.querySelector('#a').value;
+            const b = document.querySelector('#b').value;
+            const c = document.querySelector('#c').value;
+            const soma = parseFloat(a) + parseFloat(b);
+            const resultado = soma / parseFloat(c);
+            result_calculo.innerHTML = a + ' + ' + b + ' / ' + c + ' = ' + resultado;
+        }
+
+        //Arrow function:
+        const calcular_arrow = () => {
+            const a = document.querySelector('#a').value;
+            const b = document.querySelector('#b').value;
+            const c = document.querySelector('#c').value;
+            const soma = parseFloat(a) + parseFloat(b);
+            const resultado = soma / parseFloat(c);
+            result_calculo.innerHTML = a + ' + ' + b + ' / ' + c + ' = ' + resultado;
+        }
+
+    </script>
+</body>
+
+</html>
