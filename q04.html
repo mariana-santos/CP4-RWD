@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CP4-WEB/Q. 04</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+
+<body id="questao">
+    <section id="enunciado">
+        <div>
+            <h1>Questão 04.</h1>
+            <p>Crie uma função tradicional que conte os cliques na página e faça o mesmo usando Arrow function. </p>
+            <p>Exemplifique e demonstre a saída (15 pontos)</p>
+        </div>
+    </section>
+
+    <section id="answer">
+        <section id="contador">
+            <h1>Contador de cliques</h1>
+
+            <p>Clique no botão para incrementar o contador</p>
+            <button type="button" id="incremento" onclick="incrementar_arrow()">Incrementar</button>
+
+            <p id="cliques"></p>
+        </section>
+    </section>
+
+    <script>
+
+        const cliques = document.querySelector('#cliques');
+        
+        let contador = 0
+
+        function incrementar() {
+            contador ++
+            cliques.innerHTML = contador + (contador === 1 ? ' clique' : ' cliques');
+        }
+
+        //Arrow function:
+        const incrementar_arrow = () => {
+            contador ++
+            cliques.innerHTML = contador + (contador === 1 ? ' clique' : ' cliques');
+        }
+
+    </script>
+</body>
+
+</html>
