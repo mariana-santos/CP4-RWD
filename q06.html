@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CP4-WEB/Q. 06</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+
+<body id="questao">
+    <section id="enunciado">
+        <div>
+            <h1>Questão 06.</h1>
+            <p>Crie um programa que receba um nome de usuário e uma senha e verifique se eles correspondem aos dados de      um usuário cadastrado. Considere que o usuário cadastrado possui nome de usuário "admin" e senha "1234". O programa deve exibir uma mensagem indicando se o login foi realizado com sucesso ou se houve falha de autenticação. </p>
+
+            <p>Exemplifique e demonstre a saída! (15 pontos) </p>
+        </div>
+    </section>
+
+    <section id="answer">
+        <section id="login">
+            <h1>Login</h1>
+        </section>
+
+        <section class="find" id="login">
+            <label>Nome de usuário <span>*</span></label>
+            <input type="text" placeholder="Username" id="user" value="admin">
+
+            <label>Senha <span>*</span></label>
+            <input type="password" placeholder="Senha" id="senha" value="1234">
+
+            <button type="button" onclick="verificar_entrada()" >Entrar</button> 
+
+            <p id="result_login" style="width: 100%; margin-top: 1em;"></p>
+        </section>
+    </section>
+
+    <script>
+
+        const usuario = "admin";
+        const senha = "1234";
+
+        const verificar_entrada = () => {
+            const nomeUsuario = document.querySelector('#user').value
+            const senhaUsuario = document.querySelector('#senha').value
+
+            const result_login = document.querySelector('#result_login')
+
+            if (nomeUsuario === usuario && senhaUsuario === senha) {
+                result_login.innerHTML = "Login realizado com sucesso!";
+                result_login.style.color = "#3fb133"
+            } else {
+                result_login.innerHTML = "Falha de autenticação. Nome de usuário ou senha incorretos.";
+                result_login.style.color = "#b13333"
+            }
+
+        }
+        
+    </script>
+</body>
+
+</html>

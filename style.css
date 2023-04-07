@@ -131,7 +131,7 @@ h1{
     margin-bottom: .3em;
 }
 
-#find{
+.find{
     margin-top: 2em;
     display: flex;
     gap: 1em;
@@ -165,20 +165,39 @@ button:hover{
     transform: translateY(-10%);
 }
 
-.calculo input{
+#calculo input{
     width: calc(25% - 2rem);
 }
 
-.calculo button{
+#calculo button{
     width: calc(25%);
 }
 
-.calculo, .calculo p{
+#calculo, #calculo p{
     width: 100%;
 }
 
 button#incremento{
     margin: 1em 0;
+}
+
+label{
+    width: 100%;
+}
+
+#login{
+    gap: 0;
+}
+
+#login input{
+    margin-bottom: 1em;
+    box-sizing: border-box;
+    margin-right: 1em;
+}
+
+#login button{
+    margin-top: 1em;
+    width: 50%;
 }
 
 @media screen and (min-width: 769px){
@@ -229,16 +248,21 @@ button#incremento{
         width: 100%;
     }
 
-    .calculo input{
+    #calculo input{
         width: calc(50% - 3rem);
     }
 
-    .calculo button{
+    #calculo button{
         width: calc(50% - 1rem);
     }
 
     #incremento{
         width: auto;
+    }
+
+    #login button, #login input{
+        width: 100%;
+        margin-right: 0;
     }
 
 }

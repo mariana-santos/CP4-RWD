@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CP4-WEB/Q. 05</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+
+<body id="questao">
+    <section id="enunciado">
+        <div>
+            <h1>Questão 05.</h1>
+            <p>Criar um programa que calcule a média de 7 notas e exiba uma mensagem indicando se o aluno foi aprovado ou reprovado. Considere que a média mínima para aprovação é 6. </p>
+
+            <p>Exemplifique e demonstre a saída! (15 pontos) </p>
+        </div>
+    </section>
+
+    <section id="answer">
+        <section id="info_notas">
+            <h1>Média de notas</h1>
+        </section>
+
+        <section class="find">
+            <span style="width: 100%; margin: 0">Para calcular a média, digite valores numéricos separados por vírgula:</span>
+            <input type="text" placeholder="Notas" id="notas" value="5.5, 7, 6.5, 8, 4.5, 9, 6">
+            <button type="button" onclick="mostrar_resultado()" >Calcular Média</button> 
+            <p id="result_calculo"></p>
+        </section>
+    </section>
+
+    <script>
+
+        const calcularMedia = notas_str => {
+
+            //convertendo as notas pra float
+            const notas = notas_str.map((nota) => { return(parseFloat(nota)) })
+
+            const somaNotas = notas.reduce((acc, nota) => acc + nota, 0);
+            return somaNotas / notas.length;
+        }
+
+        const mostrar_resultado = () => {
+            const input_notas = document.querySelector('#notas').value
+            const result_calculo = document.querySelector('#result_calculo')
+
+            const notas = input_notas.split(',')
+            const media = calcularMedia(notas);
+            console.log(media)
+
+            if (media >= 6) {
+                result_calculo.innerHTML = `Parabéns Favela venceu, sua média é ${media.toFixed(1)} e você foi aprovado!`
+            } else {
+                result_calculo.innerHTML = `Infelizmente deu ruim bichão, sua média é ${media.toFixed(1)} e você foi reprovado.`
+            }
+        }
+
+    </script>
+</body>
+
+</html>
