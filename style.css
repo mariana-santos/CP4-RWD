@@ -211,9 +211,32 @@ label{
     width: 1.3em;
 }
 
+.row{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+    align-items: end;
+}
+
+.row a{
+    margin-bottom: 0 !important;
+}
+
+.q01{
+    justify-content: end;
+}
+
+.next img{
+    transform: rotate(180deg);
+}
+
 @media screen and (min-width: 769px){
-    section{
+    #questions, #intro{
         width: 70%;
+    }
+
+    #enunciado, #answer{
+        width: 100%;
     }
 }
 
